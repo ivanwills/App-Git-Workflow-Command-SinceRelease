@@ -17,11 +17,11 @@ sub run {
         {
             ARGV => [],
             mock => [
-                [qw/0.1 0.2/],
-                [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/],
-                [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86079/],
-                [qw/31baa55db4c99774432b97ea5ec2784819a86079 31baa55db4c99774432b97ea5ec2784819a86079/],
-                [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/],
+                { checkout => [qw/0.1 0.2/] },
+                { checkout => [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/] },
+                { checkout => [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86079/] },
+                { checkout => [qw/31baa55db4c99774432b97ea5ec2784819a86079 31baa55db4c99774432b97ea5ec2784819a86079/] },
+                { checkout => [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/] },
             ],
             STD => {
                 OUT => "Ahead by 0 commits\n",
@@ -33,11 +33,11 @@ sub run {
         {
             ARGV => [qw/-q/],
             mock => [
-                [qw/0.1 0.2/],
-                [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/],
-                [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86079/],
-                [qw/31baa55db4c99774432b97ea5ec2784819a86079 31baa55db4c99774432b97ea5ec2784819a86079/],
-                [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/],
+                { checkout => [qw/0.1 0.2/] },
+                { checkout => [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/] },
+                { checkout => [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86079/] },
+                { checkout => [qw/31baa55db4c99774432b97ea5ec2784819a86079 31baa55db4c99774432b97ea5ec2784819a86079/] },
+                { checkout => [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/] },
             ],
             STD => {
                 OUT => '',
@@ -51,11 +51,11 @@ sub run {
         {
             ARGV => [],
             mock => [
-                [qw/0.1 0.2/],
-                [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/],
-                [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86079/],
-                [qw/31baa55db4c99774432b97ea5ec2784819a86079 31baa55db4c99774432b97ea5ec2784819a86079/],
-                [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86079/],
+                { checkout => [qw/0.1 0.2/] },
+                { checkout => [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86079/] },
+                { checkout => [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86079/] },
+                { checkout => [qw/31baa55db4c99774432b97ea5ec2784819a86079 31baa55db4c99774432b97ea5ec2784819a86079/] },
+                { checkout => [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86079/] },
             ],
             STD => {
                 OUT => "Ahead by 1 commit\n",
@@ -67,12 +67,12 @@ sub run {
         {
             ARGV => [qw/-q/],
             mock => [
-                [qw/0.1 0.2/],
-                [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86071/],
-                [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86072/],
-                [qw/31baa55db4c99774432b97ea5ec2784819a86073 31baa55db4c99774432b97ea5ec2784819a86074/],
-                [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86074/],
-                [qw/1414516993 31baa55db4c99774432b97ea5ec2784819a86073/],
+                { checkout => [qw/0.1 0.2/] },
+                { checkout => [qw/1414516991 31baa55db4c99774432b97ea5ec2784819a86071/] },
+                { checkout => [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86072/] },
+                { checkout => [qw/31baa55db4c99774432b97ea5ec2784819a86073 31baa55db4c99774432b97ea5ec2784819a86074/] },
+                { checkout => [qw/1414516992 31baa55db4c99774432b97ea5ec2784819a86074/] },
+                { checkout => [qw/1414516993 31baa55db4c99774432b97ea5ec2784819a86073/] },
             ],
             STD => {
                 OUT => "Ahead by 2 commits\n",
@@ -86,6 +86,7 @@ sub run {
     );
 
     for my $data (@data) {
-        command_ok('App::Git::Workflow::Command::SinceRelease', $data);
+        command_ok('App::Git::Workflow::Command::SinceRelease', $data)
+            or return;
     }
 }
