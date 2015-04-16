@@ -17,5 +17,5 @@ while ( my $file = shift @files ) {
     }
 }
 
-diag( "Testing module $module::VERSION, Perl $], $^X" );
+diag( "Testing module $App::Git::Workflow::Command::SinceRelease::VERSION, Perl $], $^X" );
 done_testing();
