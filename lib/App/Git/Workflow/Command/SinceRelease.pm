@@ -68,7 +68,7 @@ __DATA__
 
 =head1 NAME
 
-git-since-release - checkout whitespace only changed files
+git-since-release - Finds out how many commits a branch is since latest release
 
 =head1 VERSION
 
@@ -88,14 +88,8 @@ This documentation refers to git-since-release version 0.8
 
 =head1 DESCRIPTION
 
-C<git-since-release> resets any files that only contain whitespace changes.
-This is done by finding all files modified (as shown by a C<git status>) and
-run them through C<git diff -w>. If any file results in no out put is shown
-(i.e. the changes are only white spaces) the file is then C<git checkout>ed to
-remove those changes.
-
-This makes it easier make your commits clean of pointless whitespace only
-changes and makes others work easier.
+C<git-since-release> finds out how many commits the repository is since the
+latest release (determined by the latest tag).
 
 =head1 SUBROUTINES/METHODS
 
