@@ -6,6 +6,7 @@ my $builder = Module::Build->new(
     module_name       => 'App-Git-Workflow-Command-SinceRelease',
     license           => 'perl',
     dist_author       => 'Ivan Wills <ivan.wills@gmail.com>',
+    dist_abstract     => 'Finds out how many commits a branch is since latest release',
     dist_version_from => 'lib/App/Git/Workflow/Command/SinceRelease.pm',
     requires          => {
         'perl'                         => '5.006',
@@ -16,7 +17,7 @@ my $builder = Module::Build->new(
     build_requires => {
         'Test::Git::Workflow::Command' => '0.8',
         'Test::More'                   => '0.88',
-        'Test::NoWarnings'             => 0,
+        'Test::Warnings'               => 0,
     },
     add_to_cleanup     => [ 'App-Git-Workflow-Command-SinceRelease-*' ],
     create_makefile_pl => 'traditional',
