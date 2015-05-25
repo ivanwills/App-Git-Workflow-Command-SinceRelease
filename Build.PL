@@ -22,7 +22,7 @@ my $builder = Module::Build->new(
     add_to_cleanup     => [ 'App-Git-Workflow-Command-SinceRelease-*' ],
     create_makefile_pl => 'traditional',
     create_license     => 1,
-    meta_merge => {
+    meta_merge         => {
         resources => {
             repository => 'git://github.com/ivanwills/App-Git-Workflow-Command-SinceRelease.git',
             bugtracker => 'http://rt.cpan.org/NoAuth/Bugs.html?Dist=App-Git-Workflow-Command-SinceRelease',
