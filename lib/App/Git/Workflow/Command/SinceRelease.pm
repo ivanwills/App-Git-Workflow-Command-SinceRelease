@@ -68,7 +68,7 @@ __DATA__
 
 =head1 NAME
 
-git-since-release - Finds out how many commits a branch is since latest release
+App::Git::Workflow::Command::SinceRelease - Finds out how many commits a branch is since latest release
 
 =head1 VERSION
 
