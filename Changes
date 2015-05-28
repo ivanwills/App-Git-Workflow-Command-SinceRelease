@@ -1,5 +1,13 @@
 Revision history for module
 
+0.2     2015-05-28
+        Updating for release of version 0.2
+        Fixed abstract (Ivan Wills)
+        Have both versions (Ivan Wills)
+        Moved absract to meta merge section to try to fix output (Ivan Wills)
+        Alignment fix (Ivan Wills)
+        Updated changes with commits (Ivan Wills)
+
 0.1     2015-05-24
         Reset version (Ivan Wills)
         Added dist_abstract and fixed dependencies (Ivan Wills)
