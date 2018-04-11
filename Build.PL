@@ -10,8 +10,8 @@ my $builder = Module::Build->new(
     dist_version_from => 'lib/App/Git/Workflow/Command/SinceRelease.pm',
     requires          => {
         'perl'                         => '5.006',
-        'App::Git::Workflow'           => '0.8',
-        'App::Git::Workflow::Command'  => '0.8',
+        'App::Git::Workflow'           => '1.0.6',
+        'App::Git::Workflow::Command'  => '1.0.6',
     },
     build_requires => {
         'Test::Git::Workflow::Command' => '0.8',
